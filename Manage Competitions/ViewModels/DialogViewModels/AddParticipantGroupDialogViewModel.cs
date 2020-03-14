@@ -14,12 +14,25 @@ namespace Manage_Competitions.ViewModels.DialogViewModels
 {
     public class AddParticipantGroupDialogViewModel : ManageCompetitionsBaseViewModel, IDialogRequestClose
     {
+
+        private int _heightWindow;
+
         public override string Title => throw new NotImplementedException();
         public WeightCategory WeightCategory { get; set; }
         public CompetitionSystemType CompetitionSystemType { get; set; }
         public ObservableCollection<Participant> Participants { get; set; }
 
         public event EventHandler<DialogCloseRequestedEventArgs> CloseRequested;
+
+        public int HeightWindow
+        {
+            get => _heightWindow;
+            set
+            {
+                _heightWindow = value;
+                OnPropertyChanged();
+            }
+        }
 
         public override bool IsValid()
         {
@@ -32,12 +45,9 @@ namespace Manage_Competitions.ViewModels.DialogViewModels
         public AddParticipantGroupDialogViewModel(ObservableCollection<Participant> participants)
         {
             Participants = participants;
-        }
-
-        public AddParticipantGroupDialogViewModel()
-        {
             OkCommand = new RelayCommand(p => CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(true)));
             CancelCommand = new RelayCommand(p => CloseRequested?.Invoke(this, new DialogCloseRequestedEventArgs(false)));
+            HeightWindow = 300;
         }
 
     }

@@ -21,6 +21,7 @@ namespace Manage_Competitions.ViewModels
         private IDialogService _dialogService;
         private ObservableCollection<ICompetitionSystem> _weightCategories;
         public ObservableCollection<WeightCategoryViewModel> WeightCategoryViewModels { get; } = new ObservableCollection<WeightCategoryViewModel>();
+        public ObservableCollection<Participant> Participants { get; set; }
 
         public override bool IsValid()
         {
@@ -29,7 +30,7 @@ namespace Manage_Competitions.ViewModels
 
         private void DisplayAddDialogWindow()
         {
-            var viewModel = new AddParticipantGroupDialogViewModel();
+            var viewModel = new AddParticipantGroupDialogViewModel(Participants);
             var view = new AddCompetitionSystemDialog { DataContext = viewModel};
             bool? result = view.ShowDialog();
 

@@ -1,5 +1,4 @@
-﻿using Manage_Competitions.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Manage_Competitions
+namespace Manage_Competitions.Views.MainApplicationViews.Menu
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для MainMenuUserControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainMenuUserControl : UserControl
     {
-        public MainWindow()
+        public MainMenuUserControl()
         {
-            DataContext = new MainViewModel();
+            InitializeComponent();
         }
-
     }
 }

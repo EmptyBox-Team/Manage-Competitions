@@ -1,5 +1,4 @@
-﻿using Manage_Competitions.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Manage_Competitions
+namespace Manage_Competitions.Views
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для CreateMasterView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CreateMasterView : UserControl
     {
-        public MainWindow()
+        public CreateMasterView()
         {
-            DataContext = new MainViewModel();
+            InitializeComponent();
         }
-
     }
 }

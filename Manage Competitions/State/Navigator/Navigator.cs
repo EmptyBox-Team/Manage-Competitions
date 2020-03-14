@@ -65,9 +65,14 @@ namespace Manage_Competitions.State.Navigator
                     (_initializeWorkSpaceWindow = new RelayCommand(parametr =>
                         {
                             var workSpaceWindow = new WorkSpaceWindow();
-                            workSpaceWindow.Show();
                             var competition = (Competition)parametr;
                             workSpaceWindow.DataContext = new WorkSpaceWindowViewModel(competition);
+                            var currentWindow = Application.Current.MainWindow;
+                            if (currentWindow != null)
+                            {
+                                currentWindow.Close();
+                            }
+                            workSpaceWindow.Show();
                             Application.Current.MainWindow = workSpaceWindow;
                         }));
 

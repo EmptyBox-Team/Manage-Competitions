@@ -36,7 +36,7 @@
                     </StackPanel>
                     <StackPanel Margin="0 10 0 0">
                         <ComboBox Name="categoryList" Height="30" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignComboBox}" BorderThickness="0.1" BorderBrush="DarkBlue">
-                            <ComboBoxItem VerticalAlignment="Center">Юноши младшие</ComboBoxItem>
+                            <ComboBoxItem VerticalAlignment="Center">Фак</ComboBoxItem>
                             <ComboBoxItem IsSelected="True" VerticalAlignment="Center">Девушки</ComboBoxItem>
                             <ComboBoxItem VerticalAlignment="Center">Дедушки</ComboBoxItem>
                         </ComboBox>

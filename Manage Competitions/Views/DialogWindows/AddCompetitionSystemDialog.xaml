@@ -1,0 +1,28 @@
+﻿<Window x:Class="Manage_Competitions.Views.DialogWindows.AddCompetitionSystemDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Manage_Competitions.Views.DialogWindows"
+        mc:Ignorable="d"
+        Title="AddCompetitionSystemDialog" Height="250" Width="400" ResizeMode="NoResize" WindowStyle="None" Background="Transparent">
+    <Grid>
+        <Rectangle RadiusX="10" RadiusY="10" Fill="White"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+           
+                <TextBlock Text="Весовая категория участников" Margin="10 0 0 -5" FontFamily="Yu Gothic UI Semibold" FontSize="14"></TextBlock>
+                <StackPanel Orientation="Horizontal"> 
+                <TextBox  Style="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" Margin="10 10 0 10"
+                                   Text="{Binding MainSecretaty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" />
+                    <TextBox  Style="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" Margin="40 10 0 10"
+                                   Text="{Binding MainSecretaty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="50" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

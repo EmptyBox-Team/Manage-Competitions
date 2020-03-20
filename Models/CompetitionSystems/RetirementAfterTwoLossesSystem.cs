@@ -11,6 +11,7 @@ namespace Models.CompetitionSystems
         public IEnumerable<Participant> Participants { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public IEnumerable<IRound> Rounds { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public WeightCategory WeightCategory { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        IList<IRound> ICompetitionSystem.Rounds { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

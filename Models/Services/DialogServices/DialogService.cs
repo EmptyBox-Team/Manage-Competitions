@@ -51,11 +51,11 @@ namespace Models.Services.DialogServices
                 {
                     dialog.Close();
                 }
-
-                viewModel.CloseRequested += handler;
-                dialog.DataContext = viewModel;
-                dialog.Owner = _owner;
             };
+
+            viewModel.CloseRequested += handler;
+            dialog.DataContext = viewModel;
+            dialog.Owner = _owner;
             return dialog.ShowDialog();
         }
     }

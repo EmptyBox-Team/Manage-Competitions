@@ -20,8 +20,9 @@ namespace Manage_Competitions.ViewModels
         private ICommand _addCategory;
         private IDialogService _dialogService;
         private ObservableCollection<ICompetitionSystem> _weightCategories;
+        private ObservableCollection<Participant> _participants;
+
         public ObservableCollection<WeightCategoryViewModel> WeightCategoryViewModels { get; } = new ObservableCollection<WeightCategoryViewModel>();
-        public ObservableCollection<Participant> Participants { get; set; }
 
         public override bool IsValid()
         {
@@ -30,9 +31,8 @@ namespace Manage_Competitions.ViewModels
 
         private void DisplayAddDialogWindow()
         {
-            var viewModel = new AddParticipantGroupDialogViewModel(Participants);
-            var view = new AddCompetitionSystemDialog { DataContext = viewModel};
-            bool? result = view.ShowDialog();
+            var viewModel = new AddParticipantGroupDialogViewModel(_participants);
+            bool? result = _dialogService.ShowDialog(viewModel);
 
         }        
 
@@ -48,20 +48,12 @@ namespace Manage_Competitions.ViewModels
             }
         }
 
-        public WeightCategoriesViewModel(IDialogService dialogServices)
+        public WeightCategoriesViewModel(IDialogService dialogServices, ObservableCollection<Participant> participants)
         {
             //_weightCategories = weightCategories;
             _dialogService = dialogServices;
+            _participants = participants;
 
-            WeightCategoryViewModels.Add(new WeightCategoryViewModel());
-            WeightCategoryViewModels.Add(new WeightCategoryViewModel());
-            WeightCategoryViewModels.Add(new WeightCategoryViewModel());
-            WeightCategoryViewModels.Add(new WeightCategoryViewModel());
-            WeightCategoryViewModels.Add(new WeightCategoryViewModel());
-            WeightCategoryViewModels.Add(new WeightCategoryViewModel());
-            WeightCategoryViewModels.Add(new WeightCategoryViewModel());
-            WeightCategoryViewModels.Add(new WeightCategoryViewModel());
-            WeightCategoryViewModels.Add(new WeightCategoryViewModel());
             WeightCategoryViewModels.Add(new WeightCategoryViewModel());
             WeightCategoryViewModels.Add(new WeightCategoryViewModel());
 

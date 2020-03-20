@@ -90,18 +90,18 @@ namespace Models
             _participants = new ObservableCollection<Participant>();
         }
 
-        public void AddCompetionWieghtGroup(WeightCategory weight)
+        public void AddCompetionWieghtGroup(WeightCategory weight, CompetitionSystemType competitionSystemType)
         {
-            //var participants = Participants.Where(x => (x.Weight <= weight.Last && x.Weight >= weight.First)).ToList();
-            //switch(competitionSystemType)
-            //{
-            //    case CompetitionSystemType.CIRCLE_TYPE:
-            //        Competitions.Add(new CircleСompetition{ Participants = participants});
-            //        break;
-            //    case CompetitionSystemType.RETIREMEMTAFTER_TWO_LOSSES_SYSTEM:
-            //        Competitions.Add(new RetirementAfterTwoLossesSystem { Participants = participants });
-            //        break;
-            //}
+            var participants = Participants.Where(x => (x.Weight <= weight.Last && x.Weight >= weight.First)).ToList();
+            switch(competitionSystemType)
+            {
+                case CompetitionSystemType.CIRCLE_TYPE:
+                    Competitions.Add(new CircleСompetition{ Participants = participants});
+                    break;
+                case CompetitionSystemType.RETIREMEMTAFTER_TWO_LOSSES_SYSTEM:
+                    Competitions.Add(new RetirementAfterTwoLossesSystem { Participants = participants });
+                    break;
+            }
         }
 
         public void AddParticipant(Participant participant)

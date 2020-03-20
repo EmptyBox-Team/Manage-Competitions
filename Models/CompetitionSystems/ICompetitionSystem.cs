@@ -8,7 +8,7 @@ namespace Models.CompetitionSystems
     public interface ICompetitionSystem : INotifyPropertyChanged
     {
         IEnumerable<Participant> Participants { get; set; }
-        IList<IRound> Rounds { get; set; }
+        IEnumerable<IRound> Rounds { get; set; }
         void GroupParticipants();
         WeightCategory WeightCategory { get; set; }
     }

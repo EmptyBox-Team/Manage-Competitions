@@ -87,9 +87,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="Services\EnumItemSourceServices\CompetitionSystemType.cs" />
-    <Compile Include="Services\EnumItemSourceServices\EnumItemSource.cs" />
-    <Compile Include="Services\ViewModelRequested\AddCompetitionRequest.cs" />
     <Compile Include="Services\WeighingProtocolBuilder.cs" />
     <Compile Include="State\Navigator\INavigator.cs" />
     <Compile Include="State\Navigator\NavigationMenu.cs" />

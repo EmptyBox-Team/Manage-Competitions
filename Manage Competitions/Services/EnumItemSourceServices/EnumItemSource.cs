@@ -15,8 +15,8 @@ namespace Manage_Competitions.Services.EnumItemSourceServices
     {
 
         private Type _type;
-        private IDictionary<Object, object> _valueToNameMap;
-        private IDictionary<Object, object> _nameToValueMap;
+        private IDictionary<object, object> _valueToNameMap;
+        private IDictionary<object, object> _nameToValueMap;
 
         public Type Type
         {

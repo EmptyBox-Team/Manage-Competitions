@@ -112,9 +112,7 @@ namespace Models
             }
         }
         #endregion
-
-
-
+        
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged([CallerMemberName]string prop = "")

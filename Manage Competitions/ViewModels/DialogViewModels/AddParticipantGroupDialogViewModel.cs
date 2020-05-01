@@ -21,8 +21,10 @@ namespace Manage_Competitions.ViewModels.DialogViewModels
         private ObservableCollection<Participant> _groupParticipants;
         private int _gridHeight;
         private CompetitionSystemType _competitionSystemType;
+
         public override string Title => throw new NotImplementedException();
         private WeightCategory _weightCategory;
+
         public int FirstWeight
         {
             get => _weightCategory.First;
@@ -101,9 +103,16 @@ namespace Manage_Competitions.ViewModels.DialogViewModels
 
         public ICompetitionSystem GetCompetitionSystem()
         {
-
-            ICompetitionSystem competitionSystem = new CircleСompetition { Participants = GroupParticipants, WeightCategory = _weightCategory };
-            return competitionSystem;
+            switch (SelectedSection)
+            {
+                case CompetitionSystemType.CIRCLE_TYPE:
+                    return new CircleСompetition { Participants = GroupParticipants, WeightCategory = _weightCategory };
+                case CompetitionSystemType.OLIMPICK_SYSTEM:
+                    return new OlympicSystem { Participants = GroupParticipants, WeightCategory = _weightCategory };
+                case CompetitionSystemType.RETIREMEMTAFTER_TWO_LOSSES_SYSTEM:
+                    return new RetirementAfterTwoLossesSystem { Participants = GroupParticipants, WeightCategory = _weightCategory };
+            }
+            return null;
         }
 
         public AddParticipantGroupDialogViewModel(ObservableCollection<Participant> participants)

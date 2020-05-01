@@ -6,8 +6,15 @@ namespace Models
 {
     public class Round : IRound
     {
-        public IDictionary<Participant, Participant> Rivals { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        private Dictionary<Participant, Participant> _Rivals;
+        public IDictionary<Participant, Participant> Rivals
+        {
+            get => _Rivals;
+            set
+            {
+                _Rivals = value;
+            }
+        }
+        private IDictionary<Participant, Participant> _Rivals;
 
         public Round()
         {

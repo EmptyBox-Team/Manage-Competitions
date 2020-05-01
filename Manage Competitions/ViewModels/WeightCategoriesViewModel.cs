@@ -19,21 +19,32 @@ namespace Manage_Competitions.ViewModels
         public override string Title => "Категории участников";
         private ICommand _addCategory;
         private IDialogService _dialogService;
-        private ObservableCollection<ICompetitionSystem> _weightCategories;
+        private ObservableCollection<ICompetitionSystem> _competitions;
         private ObservableCollection<Participant> _participants;
-
-        public ObservableCollection<WeightCategoryViewModel> WeightCategoryViewModels { get; } = new ObservableCollection<WeightCategoryViewModel>();
 
         public override bool IsValid()
         {
             throw new NotImplementedException();
         }
 
+        public ObservableCollection<ICompetitionSystem> Competitions
+        {
+            get => _competitions;
+            set 
+            {
+                _competitions = value;
+                OnPropertyChanged();
+            }
+        }
+
         private void DisplayAddDialogWindow()
         {
             var viewModel = new AddParticipantGroupDialogViewModel(_participants);
             bool? result = _dialogService.ShowDialog(viewModel);
-
+            if (result.HasValue)
+            {
+                _competitions.Add(viewModel.GetCompetitionSystem());
+            }
         }        
 
         public ICommand AddCategory
@@ -48,15 +59,11 @@ namespace Manage_Competitions.ViewModels
             }
         }
 
-        public WeightCategoriesViewModel(IDialogService dialogServices, ObservableCollection<Participant> participants)
+        public WeightCategoriesViewModel(IDialogService dialogServices, ObservableCollection<Participant> participants, ObservableCollection<ICompetitionSystem> competitions)
         {
-            //_weightCategories = weightCategories;
             _dialogService = dialogServices;
             _participants = participants;
-
-            WeightCategoryViewModels.Add(new WeightCategoryViewModel());
-            WeightCategoryViewModels.Add(new WeightCategoryViewModel());
-
+            _competitions = competitions;
         }
     }
 }

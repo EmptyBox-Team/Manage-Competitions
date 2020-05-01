@@ -30,9 +30,10 @@ namespace Models.CompetitionSystems
         }
         #endregion
 
-        public IEnumerable<Participant> Participants { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IEnumerable<Participant> Participants { get => _participants;  }
         public IList<IRound> Rounds { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public WeightCategory WeightCategory { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        IEnumerable<Participant> ICompetitionSystem.Participants { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

@@ -41,7 +41,7 @@
                             <RowDefinition />
                             <RowDefinition  Height="188"/>
                         </Grid.RowDefinitions>
-                    <ListBox Name="Hans" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemTemplate="{StaticResource weightCategory}" ItemsSource="{Binding WeightCategoryViewModels}">
+                    <ListBox Name="Hans" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemTemplate="{StaticResource weightCategory}" ItemsSource="{Binding Competitions}">
                             <ListBox.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <WrapPanel />

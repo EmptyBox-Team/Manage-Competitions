@@ -3,6 +3,7 @@ using Manage_Competitions.ViewModels;
 using Manage_Competitions.ViewModels.DialogViewModels;
 using Manage_Competitions.Views.DialogWindows;
 using Models;
+using Models.CompetitionSystems;
 using Models.Services.DialogServices;
 using System;
 using System.Collections.Generic;
@@ -34,8 +35,8 @@ namespace Manage_Competitions.Services
             var mainWindow = Application.Current.MainWindow;
             IDialogService dialogService = new DialogService(mainWindow);
             dialogService.Register<AddParticipantGroupDialogViewModel, AddCompetitionSystemDialog>();
-            var weightCategoriesViewModell = new WeightCategoriesViewModel(dialogService, (ObservableCollection<Participant>)_competition.Participants);
-            return weightCategoriesViewModell;
+            var weightCategoriesViewModell = new WeightCategoriesViewModel(dialogService, (ObservableCollection<Participant>)
+
         }
 
         public ManageCompetitionsBaseViewModel Do(Pages page)

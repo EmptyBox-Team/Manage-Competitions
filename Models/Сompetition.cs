@@ -21,14 +21,16 @@ namespace Models
         private string _mainSecretary;
         #endregion
 
-        public ICollection<ICompetitionSystem> Competitions
+        public ObservableCollection<ICompetitionSystem> Competitions
         {
             get => _competitions;
         }
+
         public ICollection<Participant> Participants
         {
             get => _participants;
         }
+
         public string Name
         {
             get => _name;
